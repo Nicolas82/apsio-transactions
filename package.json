@@ -1,9 +1,9 @@
 {
-  "name": "@waves/waves-transactions",
-  "version": "4.2.4",
-  "description": "Build and sign(multi-sign) transactions for Waves blockchain.",
+  "name": "@apsiocoin/apsio-transactions",
+  "version": "0.0.1",
+  "description": "Build and sign(multi-sign) transactions for Apsio blockchain.",
   "keywords": [
-    "waves",
+    "apsio",
     "crypto",
     "transactions",
     "protocol",
@@ -27,16 +27,16 @@
     "/src"
   ],
   "author": {
-    "name": "wavesplatform"
+    "name": "apsiocoin"
   },
   "contributors": [
     {
-      "name": "Sergey B",
-      "email": "siemarell@gmail.com"
+      "name": "Saysset Nicolas",
+      "email": "nicolassaysset@free.fr"
     },
     {
-      "name": "Yuriy Naydenov",
-      "email": "ebceu44@gmail.com"
+      "name": "Gireaud Luc",
+      "email": "luc.gireaud@gmail.com"
     }
   ],
   "license": "MIT",
@@ -69,7 +69,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wavesplatform/waves-transactions.git"
+    "url": "https://github.com/Nicolas82/apsio-transactions.git"
   },
   "dependencies": {
     "@waves/marshall": "^0.14.0",

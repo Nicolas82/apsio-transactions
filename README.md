@@ -5,7 +5,7 @@
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/npm/l/make-coverage-badge.svg
 
-Using this library you can easily create and sign transactions for Waves blockchain.
+Using this library you can easily create and sign transactions for Apsio blockchain.
 It also allows you to multi-sign existing transactions or create them without signature at all.
 
 - [Transactions](#Transactions) 
@@ -25,7 +25,7 @@ const {
  alias, burn, cancelLease, data, exchange,
  invokeScript, issue, lease, massTransfer, reissue,
  setAssetScript, setScript, sponsorship, transfer, updateAssetInfo
-} = require('@waves/waves-transactions')
+} = require('@apsiocoin/apsio-transactions')
 ```
 Example:
 ```typescript
@@ -321,7 +321,7 @@ export interface IUpdateAssetInfoParams<LONG = string | number> extends IBasicPa
 If you want to create  the minimum you need to provide is **amount** and **recipient** as defined in Transfer params:
 ```js
 
-const { transfer } = require('@waves/waves-transactions')
+const { transfer } = require('@apsiocoin/apsio-transactions')
 const seed = 'some example seed phrase'
 const signedTranserTx = transfer({ 
   amount: 1,
@@ -368,7 +368,7 @@ const unsignedTransferTx = transfer({
 })
 ```
 
-Now you are able to POST it to Waves API or store for future purpose or you can add another signature from other party:
+Now you are able to POST it to APSIO API or store for future purpose or you can add another signature from other party:
 ```js
 const otherPartySeed = 'other party seed phrase'
 const transferSignedWithTwoParties = transfer(signedTranserTx, seed)
@@ -398,7 +398,7 @@ So now there are two proofs:
 ### Orders
 Order is created the same way as transaction
 ```typescript
-const { order } = require('@waves/waves-transactions')
+const { order } = require('@apsiocoin/apsio-transactions')
 const params = {
     amount: 100000000, //1 waves
     price: 10, //for 0.00000010 BTC
@@ -412,7 +412,7 @@ const signedOrder = order(params, 'Some seed ')
 ### Broadcast
 To send transaction you can use either node [REST API](https://nodes.wavesplatform.com/api-docs/index.html#!/transactions/broadcast) or [broadcast](https://wavesplatform.github.io/waves-transactions/globals.html#broadcast) helper function:
 ```javascript
-const {broadcast} =  require('@waves/waves-transactions');
+const {broadcast} =  require('@apsiocoin/apsio-transactions');
 const nodeUrl = 'https://nodes.wavesplatform.com';
 
 broadcast(signedTx, nodeUrl).then(resp => console.log(resp))
@@ -427,6 +427,6 @@ Most transactions require chainId as parameter, e.g: [IBurnParams](https://waves
 This library uses `@waves/ts-lib-crypto` for cryptography and `@waves/node-api-js` for interacting with node. 
 You can access them this way:
 ```typescript
-const libCrypto = require('@waves/waves-transactions').libs.crypto
-const libApi = require('@waves/waves-transactions').libs.nodeApiJs
+const libCrypto = require('@apsiocoin/apsio-transactions').libs.crypto
+const libApi = require('@apsiocoin/apsio-transactions').libs.nodeApiJs
 ```
